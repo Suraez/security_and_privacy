@@ -3,3 +3,10 @@ all:
 
 cracker:
 	javac Cracker.java && java Cracker
+
+test:
+	javac Test.java && java Test
+
+
+test2:
+	javac Test2.java && java Test2

@@ -52,8 +52,6 @@ public class SimpleCracker {
                 String salt     = parts[1];
                 String storedHexHash = parts[2];
 
-                System.out.println("Cracking for user: " + username + " with salt: " + salt);
-
                 for (String password : dictionary) {
                     byte[] inputBytes = (salt + password).getBytes(StandardCharsets.UTF_8);
                     byte[] digest = md.digest(inputBytes);
@@ -62,7 +60,6 @@ public class SimpleCracker {
                     // Compare ignoring case to be robust against hex-case differences in file
                     if (hex.equalsIgnoreCase(storedHexHash)) {
                         System.out.println(username + ":" + password);
-                       System.out.println(hex + " " + storedHexHash);
                         break; 
                     }
                     // reset MessageDigest for next digest (digest() already reset internal state)
